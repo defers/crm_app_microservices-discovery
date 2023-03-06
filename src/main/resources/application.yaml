@@ -1,6 +1,16 @@
+spring:
+  profiles:
+    active: dev
+
+---
+
 eureka:
   client:
     registerWithEureka: false
     fetchRegistry: false
 server:
   port: 3502
+spring:
+  config:
+    activate:
+      on-profile: dev
