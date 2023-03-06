@@ -5,11 +5,15 @@ spring:
 ---
 
 eureka:
+  instance:
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
 server:
-  port: 3502
+  port: 8761
 spring:
   config:
     activate:
